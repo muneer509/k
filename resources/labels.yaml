@@ -9,8 +9,8 @@ kind: Pod
 metadata:
   name: "labeled-pod"
   labels:
-    CreatedBy: "Muneer Sir"
-    Purpose: "Learning about K8s Labels"
+    CreatedBy: "Muneer-Sir"
+    Purpose: "Learning-about-K8s-Labels"
     Environment: "Development"
     Team: "DevOps"
 spec:
