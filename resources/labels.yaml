@@ -1,0 +1,21 @@
+# labels in kubernetes are key/value pairs that are attached to objects such as pods, services, and deployments.
+# they are used to organize and select subsets of objects.
+# this file defines a set of labels that can be applied to kubernetes resources.
+# labels are typically used for grouping, selecting, and filtering resources.
+# labels can be used in conjunction with selectors to identify specific resources.
+# labels can also be used for managing and organizing resources in a kubernetes cluster.
+apiVersion : v1
+kind : pod 
+metadata :
+  name : Pod with Lables
+  Lables :
+    CreatedBy : "Muneer Sir"
+    Purpose : "Learning about K8s Labels"
+    Environment : "Development"
+    Team : "DevOps"
+spec :
+  containers :
+    - name : nginx-container
+      image : nginx:latest
+      ports :
+        - containerPort : 80

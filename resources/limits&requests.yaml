@@ -1,0 +1,26 @@
+# in K8s limits and requests are used to manage resource allocation for containers running in pods.
+# limits define the maximum amount of resources that a container can use, while requests define the minimum amount of resources that a container needs to run.
+# limits and requests can be defined for CPU and memory resources.
+# defining limits and requests helps ensure that containers have the resources they need to run properly, while also preventing them from using too many resources and impacting other containers running in the same pod or node.
+# limits and requests can be defined using the resources field in the container specification.
+# if its not defined kubernetes will not enforce any resource constraints on the container.
+apiVersion : v1
+kind : Pod
+metadata :
+  name : Pod with Limits and Requests
+  labels :
+    CreatedBy : "Muneer Sir"
+    Purpose : "Learning about K8s Limits and Requests"
+    Environment : "Development"
+    Team : "DevOps"
+spec :
+  containers :
+    - name : resource-container
+      image : nginx
+      resources :
+        requests :
+          memory : "128Mi"
+          cpu : "250m"
+        limits :
+          memory : "256Mi"
+          cpu : "500m"
