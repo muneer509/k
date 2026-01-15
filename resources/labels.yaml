@@ -5,7 +5,7 @@
 # labels can be used in conjunction with selectors to identify specific resources.
 # labels can also be used for managing and organizing resources in a kubernetes cluster.
 apiVersion: v1
-kind: pod
+kind: Pod
 metadata:
   name: Pod with Labels
   labels:
