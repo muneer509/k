@@ -11,8 +11,8 @@ kind: Pod
 metadata:
   name: Pod-with-Annotations
   annotations: 
-    CreatedBy: "Muneer Sir"
-    Purpose: "Learning about K8s Annotations"
+    CreatedBy: "Muneer-Sir"
+    Purpose: "Learning-about-K8s-Annotations"
     Environment: "Development"
     Team: "DevOps"
     buildUrl: "http://jenkins.local/job/1234/"
