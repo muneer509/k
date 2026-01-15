@@ -21,7 +21,7 @@ metadata :
 spec :
   containers :
     - name : annotation-container
-      image : nginx:latest
+      image: nginx:latest
       command : ["sh", "-c", "echo Hello Kubernetes Annotations! && sleep 3600"]
       port :
         - containerPort : 80
