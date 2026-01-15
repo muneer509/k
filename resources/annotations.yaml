@@ -9,7 +9,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-with-Annotations
+  name: pod-with-annotations
   annotations: 
     CreatedBy: "Muneer-Sir"
     Purpose: "Learning-about-K8s-Annotations"
