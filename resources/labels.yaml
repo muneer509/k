@@ -4,18 +4,18 @@
 # labels are typically used for grouping, selecting, and filtering resources.
 # labels can be used in conjunction with selectors to identify specific resources.
 # labels can also be used for managing and organizing resources in a kubernetes cluster.
-apiVersion : v1
-kind : pod 
-metadata :
-  name : Pod with Lables
-  Lables :
-    CreatedBy : "Muneer Sir"
-    Purpose : "Learning about K8s Labels"
-    Environment : "Development"
-    Team : "DevOps"
-spec :
-  containers :
-    - name : nginx-container
-      image : nginx:latest
-      ports :
+apiVersion: v1
+kind: pod
+metadata:
+  name: Pod with Labels
+  labels:
+    CreatedBy: "Muneer Sir"
+    Purpose: "Learning about K8s Labels"
+    Environment: "Development"
+    Team: "DevOps"
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      ports:
         - containerPort : 80
