@@ -10,6 +10,5 @@ spec:
       envFrom:
         - configMapRef 
             name: configmap
-      envFrom:
         - configMapRef 
             name: sample-cnfg
