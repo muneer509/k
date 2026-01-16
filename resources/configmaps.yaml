@@ -5,7 +5,7 @@
 # configmaps can be consumed by pods and containers in several ways, including as environment variables, command-line arguments, or as configuration files mounted as volumes
 # configmaps can be updated dynamically, allowing you to change configuration settings without having to restart or redeploy the application
 apiVersion: v1
-kind: ConfigMaps 
+kind: ConfigMap
 metadata:
   name: configmap
 data:
