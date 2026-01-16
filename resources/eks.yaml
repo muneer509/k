@@ -7,7 +7,7 @@ metadata:
 
 managedNodeGroups:
   - name: expense
-    instanceType: m5.large
+    instanceType: m3.medium
     desiredCapacity: 2
     spot: true
     # availabilityZones:
