@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: "sample-cnfg"
-  data:
+data:
     sample-name: "Muneer"
     sample-ID: "mshaik4"
     Bin: "SD"
