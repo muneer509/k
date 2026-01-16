@@ -41,7 +41,7 @@ metadta:
   name: pod3
 spec:
   containers:
-    - name: c3
+    - name: my-pod3
       image: nginx:latest
       env:
         - name: limit-memory
