@@ -35,31 +35,62 @@
 #           memory: env("limit-memory")
 #           cpu: env("limit-cpu")
             
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: "my-pod3"
+# spec:
+#   containers:
+#     - name: "my-pod3"
+#       image: nginx:latest
+#       env:
+#         - name: limit-memory
+#           valueFrom:
+#             configMapKeyRef:
+#               name: configmap
+#               key: limits-memory
+#         - name: limit-cpu
+#           valueFrom:
+#             configMapKeyRef:
+#               name: configmap
+#               key: limits-cpu
+#         - name: request-memory
+#           valueFrom:
+#             configMapKeyRef:
+#               name: configmap
+#               key: requests-memory
+#         - name: request-cpu
+#           valueFrom:
+#             configMapKeyRef:
+#               name: configmap
+#               key: requests-cpu
+
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "my-pod3"
+  name: resource-limits-pod
+  namespace: default
 spec:
   containers:
-    - name: "my-pod3"
-      image: nginx:latest
+    - name: my-container
+      image: nginx
       env:
-        - name: limit-memory
+        - name: LIMIT_MEMORY
           valueFrom:
             configMapKeyRef:
               name: configmap
               key: limits-memory
-        - name: limit-cpu
+        - name: LIMIT_CPU
           valueFrom:
             configMapKeyRef:
               name: configmap
               key: limits-cpu
-        - name: request-memory
+        - name: REQUEST_MEMORY
           valueFrom:
             configMapKeyRef:
               name: configmap
               key: requests-memory
-        - name: request-cpu
+        - name: REQUEST_CPU
           valueFrom:
             configMapKeyRef:
               name: configmap
