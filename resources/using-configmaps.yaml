@@ -38,7 +38,7 @@
 apiVersion: v1
 kind: Pod
 metadta:
-  name: pod3
+  name: my-pod3
 spec:
   containers:
     - name: "my-pod3"
