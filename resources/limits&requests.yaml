@@ -7,7 +7,7 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: resource-limits-requests
+  name: rl-pod
 spec:
   containers:
     - name: my-container
