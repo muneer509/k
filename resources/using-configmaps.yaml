@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: rlc-pod
+spec:
+  containers:
+    - name: my-pod
+      image: nginx:latest
+      env:
+        - name: limit-memory
+          valueFrom:
+            configMapKeyRef:
+              name: configmap
+              key: limits-memory
+        - name: limit-cpu
+          valueFrom:
+            configMapKeyRef:
+              name: configmap
+              key: limits-cpu
+        - name: request-memory
+          valueFrom:
+            configMapKeyRef:
+              name: configmap
+              key: requests-memory
+        - name: request-cpu
+          valueFrom:
+            configMapKeyRef:
+              name: configmap
+              key: requests-cpu
+      resources:
+        requests:
+          memory: env("request-memory")
+          cpu: env("request-cpu")
+        limits:
+          memory: env("limit-memory")
+          cpu: env("limit-cpu")
+            

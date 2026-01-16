@@ -4,29 +4,12 @@
 # configmaps can be created using the kubectl command-line tool or by defining them in YAML files
 # configmaps can be consumed by pods and containers in several ways, including as environment variables, command-line arguments, or as configuration files mounted as volumes
 # configmaps can be updated dynamically, allowing you to change configuration settings without having to restart or redeploy the application
-apiVersion : v1
-kind : CongigMap
-metadata :
-  name : app-config
-  labels :
-    CreatedBy : "Muneer Sir"
-    Purpose : "Learning about K8s ConfigMaps"
-    Environment : "Development"
-    Team : "DevOps"
-data :
-  APP_NAME : "KubernetesApp"
-  APP_VERSION : "1.0.0"
-  DB_HOST : "localhost"
-  DB_PORT : "5432"
-  LOG_LEVEL : "DEBUG"
-  FEATURE_FLAG : "true"
-  MAX_CONNECTIONS : "100"
-  TIMEOUT : "30s"
-  RETRY_ATTEMPTS : "5"
-  CACHE_ENABLED : "true"
-  CACHE_TTL : "60s"
-  API_ENDPOINT : "https://api.kubernetesapp.local"
-  SUPPORT_EMAIL : "muneer509@gmail.com"
-  MAINTENANCE_MODE : "false"
-  WELCOME_MESSAGE : "Welcome to Kubernetes App!"
-  
+apiVersion: v1
+kind: ConfigMaps 
+metadata:
+  name: configmap
+data:
+  limits-memory: "128Mi"
+  limits-cpu: "500m"
+  requests-memory: "64Mi"
+  requests-cpu: "100m"
