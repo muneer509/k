@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: configMap
 metadata:
-  name: sample-cnfg
+  name: "sample-cnfg"
   data:
     sample-name: "Muneer"
     sample-ID: "mshaik4"
