@@ -1,0 +1,26 @@
+kind: ReplicaSet
+apiVersion: apps/v1
+metadata:
+  name: rs 
+  labels:
+    name: replica-set
+    component: backend
+    environment: development
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: replica-set
+      component: backend
+      environment: development
+  template:
+    metadata:
+      name: rs
+      labels:
+        name: replica-set
+        component: backend
+        environment: development
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
