@@ -1,7 +1,7 @@
 kind: ReplicaSet
 apiVersion: apps/v1
 metadata:
-  name: rs 
+  name: rs-pod
   labels:
     name: replica-set
     component: backend
