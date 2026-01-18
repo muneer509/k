@@ -10,7 +10,7 @@ metadata:
 spec:
   replicas: 3
   selector:
-    matchLables:
+    matchLabels:
       component: backend
       project: expense
       environment: development
