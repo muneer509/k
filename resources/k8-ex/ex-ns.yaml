@@ -1,0 +1,9 @@
+kind: NameSapce
+apiVersion: v1
+metadata:
+  name: ex-ns
+  labels:
+    name: Namespace
+    project: expense
+    environment: development
+    CreatedBy: muneer
