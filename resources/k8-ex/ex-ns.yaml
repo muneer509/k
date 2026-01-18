@@ -1,4 +1,4 @@
-kind: NameSapce
+kind: NameSpace
 apiVersion: v1
 metadata:
   name: ex-ns
