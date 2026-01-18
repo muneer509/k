@@ -1,0 +1,65 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: api-config
+  namespace: ex-ns
+data:
+  DB_HOST: mysql
+---
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: api
+  labels:
+    name: api
+    component: backend
+    project: expense
+    environment: development
+  namespace: ex-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: backend
+      project: expense
+      environment: development
+  template:
+    metadata:
+      labels:
+        component: backend
+        project: expense
+        environment: development
+    spec:
+      containers:
+      - name: api
+        image: joindevops/backend:v1
+        env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: api-config
+              key: DB_HOST
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: api-service
+  namespace: ex-ns
+  labels:
+    name: api-service
+    component: backend
+    project: expense
+    environment: development
+spec:
+
+  type: ClusterIP
+  selector:
+    component: backend
+    project: expense
+    environment: development
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80
