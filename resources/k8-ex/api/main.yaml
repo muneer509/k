@@ -34,10 +34,12 @@ spec:
       containers:
       - name: api
         image: joindevops/backend:v1
-        envFrom:
-        - configMapKeyRef:
-            name: api-config
-            key: DB_HOST
+        env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: api-config
+              key: DB_HOST
 ---
 kind: Service
 apiVersion: v1
