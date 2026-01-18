@@ -1,7 +1,7 @@
 kind: ReplicaSet
 apiVersion: apps/v1
 metadata:
-  name: RS 
+  name: rs
   labels:
     name: ReplicaSet
     component: backend
@@ -18,7 +18,7 @@ spec:
   template:
     metadata:
       labels:
-        app: backend
+        component: backend
         project: expense
         environment: development
     spec:
