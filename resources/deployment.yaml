@@ -1,0 +1,49 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: rs
+  labels:
+    name: Deployment
+    component: backend
+    project: expense
+    environment: development
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: backend
+      project: expense
+      environment: development
+
+  template:
+    metadata:
+      labels:
+        component: backend
+        project: expense
+        environment: development
+    spec:
+      containers:
+      - name: backend
+        image: nginx:stable-perl
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: e-svc 
+  labels:
+    name: Service
+    component: backend
+    project: expense
+    environment: development
+spec:
+  type: ClusterIP
+  selector:
+    component: backend
+    project: expense
+    environment: development
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80
