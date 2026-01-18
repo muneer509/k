@@ -25,4 +25,25 @@ spec:
       containers:
       - name: mysql
         image: joindevops/mysql:v1
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql-service
+  namespace: ex-ns
+  labels:
+    app: mysql
+    project: expense
+    environment: development
+spec:
+  type: ClusterIP
+  selector:
+    app: mysql
+    project: expense
+    environment: development
+  ports:
+  - name: mysql
+    protocol: TCP
+    port: 3306
+    targetPort: 3306
         
