@@ -17,7 +17,7 @@ spec:
 
   template:
     metadata:
-      lables:
+      labels:
         app: backend
         project: expense
         environment: development
