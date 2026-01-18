@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: nginx
+        image: alpine:latest
 
 ---
 kind: Service
