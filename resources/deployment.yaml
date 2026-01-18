@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: nginx:stable-perl
+        image: nginx
 
 ---
 kind: Service
