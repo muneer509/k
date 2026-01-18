@@ -1,26 +1,28 @@
 kind: ReplicaSet
 apiVersion: apps/v1
 metadata:
-  name: rs-pod
-  labels:
-    name: replica-set
+  name: RS 
+  lables:
+    name: ReplicaSet
     component: backend
+    project: expense
     environment: development
 spec:
   replicas: 3
   selector:
-    matchLabels:
-      name: replica-set
+    matchLables:
       component: backend
+      project: expense
       environment: development
+
   template:
     metadata:
-      name: rs-pod
-      labels:
-        name: replica-set
-        component: backend
+      lables:
+        app: backend
+        project: expense
         environment: development
     spec:
       containers:
-      - name: nginx
+      - name: backend
         image: nginx
+        
