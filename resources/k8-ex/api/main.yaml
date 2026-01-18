@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: muneer509/backend
+        image: muneer509/backend:v1
         env:
         - name: DB_HOST
           valueFrom:
