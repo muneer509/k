@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: joindevops/backend:v1
+        image: muneer509/backend
         env:
         - name: DB_HOST
           valueFrom:
