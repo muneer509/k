@@ -1,13 +1,14 @@
 kind: Deployment
 apiVersion: apps/v1
-namespace: ex-ns
+
 metadata:
   name: mysql
   labels:
     app: mysql
     project: expense
     environment: development
-specc:
+  namespace: ex-ns
+spec:
   replicas: 2
   selector:
     matchLabels:
