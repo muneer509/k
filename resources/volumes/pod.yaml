@@ -13,3 +13,5 @@ spec:
   - name: ebs-volume
     persistentVolumeClaim:
       claimName: ebs-pvc
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1a
