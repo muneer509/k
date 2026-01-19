@@ -1,7 +1,7 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: pod-volume
+  name: pod-volume1
   labels:
     purpose: test-ebs
 spec:
