@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod 
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMouts:
+    - name: ebs-volume
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: ebs-volume
+    persistentVolumeClaim:
+      claimName: ebs-pvc
