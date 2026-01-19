@@ -2,6 +2,8 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: pod-volume
+  labels:
+    purpose: test-ebs
 spec:
   containers:
   - name: nginx
@@ -15,3 +17,18 @@ spec:
       claimName: ebs-pvc
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1a
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: pod-volume-service
+  labels:
+    purpose: test-ebs
+spec:
+  type: ClusterIP
+  selector:
+    purpose: test-ebs
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
