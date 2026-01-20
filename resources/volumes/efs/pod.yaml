@@ -2,6 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: efs-pod 
+  labels:
   purpose: efs-test
 spec:
   containers:
