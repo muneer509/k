@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: efs-pvc-expense
+spec:
+ volumeName: efs-pv-expense
+ accessModes:
+   - ReadWriteOnce
+ resources:
+    requests:
+      storage: 5Gi
+storageClassName: ""
