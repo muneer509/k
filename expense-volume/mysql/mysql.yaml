@@ -1,0 +1,85 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql
+  namespace: expense
+  labels:
+    app: mysql
+    project: expense
+    environment: development
+spec:
+  ClusterIP: None # Headless Service
+  selector:
+    app: mysql
+    project: expense
+    environment: development
+  ports:
+    - name: mysql
+      protocol: TCP
+      port: 3306
+      targetPort: 3306
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql-lb
+  namespace: expense
+  labels:
+    app: mysql
+    project: expense
+    environment: development
+spec:
+  type: ClusterIP 
+  selector:
+    app: mysql
+    project: expense
+    environment: development
+  ports:
+    - name: mysql
+      protocol: TCP
+      port: 3306
+      targetPort: 3306
+---
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: mysql
+  namespace: expense
+  labels:
+    app: mysql
+    project: expense
+    environment: development  
+spec:
+  serviceName: "mysql-headless"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mysql
+      project: expense
+      environment: development
+  template:
+    metadata:
+      labels:
+        app: mysql
+        project: expense
+        environment: development
+    spec:
+      containers:
+        - name: mysql
+          image: joindevops/mysql:v1
+          volumeMounts:
+            - name: expense-ebs
+              mountPath: /var/lib/mysql
+  volumeClaimTemplates:
+    - metadata:
+        name: 
+        labels:
+          app: mysql
+          project: expense
+          environment: development
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: expense-ebs 
+        resources:
+          requests:
+            storage: 1Gi
