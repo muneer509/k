@@ -9,7 +9,7 @@ spec:
     - name: app
       image: nginx
       volumeMounts:
-        - name: efs-volume
+        - name: expense-efs
           mountPath: /usr/share/nginx/html
   volumes:
     - name: expense-efs
