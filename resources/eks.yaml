@@ -10,5 +10,6 @@ managedNodeGroups:
     instanceType: m3.medium
     desiredCapacity: 2
     spot: true
+    volumeSize: 20
     # availabilityZones:
     # - us-east-1f
