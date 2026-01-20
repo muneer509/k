@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: efs-pod 
   labels:
-  purpose: efs-test
+    purpose: efs-test
 spec:
   containers:
     - name: app
