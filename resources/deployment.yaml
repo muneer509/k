@@ -8,7 +8,7 @@ metadata:
     project: expense
     environment: development
 spec:
-  replicas: 30
+  replicas: 5
   selector:
     matchLabels:
       component: backend
