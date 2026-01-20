@@ -8,7 +8,7 @@ metadata:
     project: expense
     environment: development
 spec:
-  ClusterIP: None # Headless Service
+  clusterIP: None # Headless Service
   selector:
     app: mysql
     project: expense
