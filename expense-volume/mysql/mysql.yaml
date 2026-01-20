@@ -40,6 +40,23 @@ spec:
       port: 3306
       targetPort: 3306
 ---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: expense-ebs
+  namespace: expense
+  labels:
+    app: mysql
+    project: expense
+    environment: development
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: expense-ebs
+  resources:
+    requests:
+      storage: 1Gi
+---
 kind: StatefulSet
 apiVersion: apps/v1
 metadata:
