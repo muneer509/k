@@ -1,0 +1,4 @@
+apiVersion: v1
+name: backend
+description: A Helm chart for Kubernetes Expense Backend deployment
+version: 0.0.1
