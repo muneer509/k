@@ -1,0 +1,9 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: tolation-example
+  namespace: default
+spec:
+  containers:
+  - name: nginx
+    image: nginx
