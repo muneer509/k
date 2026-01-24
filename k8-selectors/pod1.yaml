@@ -23,7 +23,7 @@ spec:
           - key: hardware
             operator: In
             values:
-            - cpu
+            - gpu
   #     preferredDuringScheduling # Soft requirement
   # affinity:
   #   nodeAffinity: 
