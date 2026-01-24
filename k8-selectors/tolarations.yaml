@@ -1,13 +1,13 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: tolaration-example
+  name: tolaration
   namespace: default
 spec:
   containers:
   - name: nginx
     image: nginx
-  tolarations:
+  tolerations:
   - key: hardware
     operator: Equal
     value: gpu
