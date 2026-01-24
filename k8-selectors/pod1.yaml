@@ -15,25 +15,25 @@ spec:
     value: gpu
     effect: NoSchedule
     # requiredDuringScheduling
-  # affinity:
-  #   nodeAffinity:
-  #     requiredDuringSchedulingIgnoredDuringExecution: # Hard requirement
-  #       nodeSelectorTerms:
-  #       - matchExpressions:
-  #         - key: hardware
-  #           operator: In
-  #           values:
-  #           - gpu
-  #     preferredDuringScheduling # Soft requirement
   affinity:
-    nodeAffinity: 
-      preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution: # Hard requirement
+        nodeSelectorTerms:
+        - matchExpressions:
           - key: hardware
             operator: In
             values:
             - memory-optimized
+  #     preferredDuringScheduling # Soft requirement
+  # affinity:
+  #   nodeAffinity: 
+  #     preferredDuringSchedulingIgnoredDuringExecution:
+  #     - weight: 1
+  #       preference:
+  #         matchExpressions:
+  #         - key: hardware
+  #           operator: In
+  #           values:
+  #           - memory-optimized
 
     # kubectl label nodes ip-192-168-50-18.ec2.internal hardware=gpu
