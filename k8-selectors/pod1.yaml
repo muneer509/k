@@ -23,7 +23,7 @@ spec:
           - key: hardware
             operator: In
             values:
-            - memory-optimized
+            - cpu
   #     preferredDuringScheduling # Soft requirement
   # affinity:
   #   nodeAffinity: 
