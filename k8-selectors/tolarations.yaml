@@ -7,8 +7,8 @@ spec:
   containers:
   - name: nginx
     image: nginx
-  # tolarations:
-  # - key: hardware
-  #   operator: Equal
-  #   value: gpu
-  #   effect: NoSchedule
+  tolarations:
+  - key: hardware
+    operator: Equal
+    value: gpu
+    effect: NoSchedule
