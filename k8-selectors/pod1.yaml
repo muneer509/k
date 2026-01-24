@@ -7,10 +7,21 @@ spec:
   containers:
   - name: nginx
     image: nginx
-  nodeSelector:
-    hardware: gpu
+  # nodeSelector:
+  #   hardware: gpu
   tolerations:
   - key: hardware
     operator: Equal
     value: gpu
     effect: NoSchedule
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution: # Hard requirement
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: hardware
+            operator: In
+            values:
+            - gpu
+
+    # kubectl label nodes ip-192-168-50-18.ec2.internal hardware=gpu
